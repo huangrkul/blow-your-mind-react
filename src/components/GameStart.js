@@ -1,10 +1,13 @@
 import React from 'react';
+import logo from '../../public/assets/logo.png';
+import PlayerForm from './PlayerForm';
 
 const GameStart = (props) => {
   return (
-    <article>
-      <div>this is GameStart</div>
-      <button onClick={() => props.nextPage('lose')}>gameLose</button>
+    <article className="game-start">
+      <h1 className="none">Blow Your Mind - Web Game</h1>
+      <div className="logo"><img src={logo} /></div>
+      <PlayerForm />
     </article>
   );
 }
