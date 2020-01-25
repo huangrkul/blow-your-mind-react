@@ -1,0 +1,37 @@
+$site-yellow-lgt:  #d1a056;
+$site-yellow:      #d1881b;
+$site-yellow-drk:  #bf7719;
+$site-brown:       #874F1D;
+$site-red:         #b80117;
+$site-red-drk:     #562c2c;
+$site-black:       #261E1c;
+$title-font: 'Righteous', cursive;
+$base-font: 'Roboto', sans-serif;
+
+@import './game-start.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+body {
+  background-image: url('../../public/assets/bgpattern.jpg');
+  background-size: contain;
+  font-family: $base-font;
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+.title-font {
+  font-family: $title-font;
+}
+
+.none {
+  display: none;
+}
+

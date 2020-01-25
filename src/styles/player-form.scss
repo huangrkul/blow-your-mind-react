@@ -1,0 +1,64 @@
+.player-form {
+  position: relative;
+  width: 20vw;
+  margin: -2.5vw auto;
+  background-color: $site-brown;
+  border: 1.3vw solid $site-brown;
+  border-radius: 1.3vw;
+  z-index: 999;
+}
+
+.player-form form, .player-form > div {
+  background-color: $site-yellow-lgt;
+  border: 1.3vw solid $site-yellow-lgt;
+  border-radius: 1.3vw;
+}
+
+.player-form ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.player-form ul li {
+  flex: 0 0 45%;
+  margin-bottom: 0.5vw;
+}
+
+.player-form ul li:last-child {
+  flex: 0 0 100%;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.player-form ul li:last-child input {
+  background-color: $site-red-drk;
+  border: 10px solid $site-red-drk;
+  border-radius: 10px;
+  font-family: $title-font;
+  color: white;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.player-form ul li:last-child input:hover {
+  color: $site-red;
+}
+
+.player-form form label, .player-form form select, .player-form input {
+  font-size: 1vw;
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+}
+
+.player-form form select {
+  font-size: 0.8vw;
+}
+
+.player-form > div {
+  padding: 2vw 0 2vw 0;
+  text-align: center;
+}

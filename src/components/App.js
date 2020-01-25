@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import GameStart from './GameStart';
 import GameMain from './GameMain';
 import GameWin from './GameWin';
 import GameLose from './GameLose';
+import { store } from './store.js';
 
 const components = {
   start: GameStart,
@@ -12,16 +13,11 @@ const components = {
 }
 
 const App = () => {
-
-  const [page, setPage] = useState('start');
-  const PageToRender = components[page];
-  const onNextPage = (selected) => {
-    setPage(selected);
-  }
-
+  const globalState = useContext(store);
+  const PageToRender = components[globalState.state.page];
   return (
     <main>
-      <PageToRender nextPage={onNextPage} />
+      <PageToRender />
     </main>
   );
 }
