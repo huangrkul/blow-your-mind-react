@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { store } from './store.js';
 
+const PlayerForm = () => {
 
-const PlayerForm = (props) => {
-
-  const [difficulty, setDifficulty] = useState('normal');
-  const [player, setPlayer] = useState('');
+  const globalState = useContext(store);
+  const { dispatch } = globalState;
+  const difficulty = globalState.state.difficulty;
+  const player = globalState.state.player;
 
   const handleDifficulty = (event) => {
-    setDifficulty(event.target.value);
+    dispatch({type: event.target.value});
   }
 
   const handlePlayer = (event) => {
-    setPlayer(event.target.value);
+    dispatch({type: 'name', payload: event.target.value})
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
   }
 
-  useEffect(() => {
-    console.log(difficulty);
-    console.log(player);
-  }, [difficulty])
+  // useEffect(() => {
+  //   console.log(difficulty);
+  //   console.log(player);
+  // }, [difficulty])
 
   return (
     <section className="player-form">
@@ -31,10 +33,10 @@ const PlayerForm = (props) => {
           <li><input 
               type="text" 
               id="name" 
-              autoComplete="off" 
-              required="required" 
-              autoFocus="autofocus"  
-              size="14" 
+              autoComplete="off"
+              required="required"
+              maxLength="20" 
+              autoFocus="autofocus"
               value={player}
               onChange={handlePlayer}/>
           </li>

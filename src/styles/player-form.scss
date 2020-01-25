@@ -46,8 +46,14 @@
   color: $site-red;
 }
 
-
 .player-form form label, .player-form form select, .player-form input {
   font-size: 1vw;
   vertical-align: middle;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+}
+
+.player-form form select {
+  font-size: 0.8vw;
 }
