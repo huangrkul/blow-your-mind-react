@@ -22,6 +22,11 @@ body {
   font-family: $base-font;
 }
 
+button:focus {
+  outline: 0;
+}
+
+
 .title-font {
   font-family: $title-font;
 }

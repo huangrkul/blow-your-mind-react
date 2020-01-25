@@ -13,30 +13,22 @@ const PlayerForm = () => {
   }
 
   const handlePlayer = (event) => {
-    dispatch({type: 'name', payload: event.target.value})
+    dispatch({type: 'name', payload: event.target.value});
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    document.querySelector('.player-form form').classList.toggle('none');
+    document.querySelector('.player-form > div').classList.toggle('none');
+    dispatch({type: 'submit', payload: true});
   }
-
-  // useEffect(() => {
-  //   console.log(difficulty);
-  //   console.log(player);
-  // }, [difficulty])
 
   return (
     <section className="player-form">
       <form onSubmit={handleSubmit}>
         <ul>
           <li><label htmlFor="name" className="title-font">PLAYER NAME:</label></li>
-          <li><input 
-              type="text" 
-              id="name" 
-              autoComplete="off"
-              required="required"
-              maxLength="20" 
-              autoFocus="autofocus"
+          <li><input type="text" id="name" autoComplete="off" required="required" maxLength="20" autoFocus="autofocus"
               value={player}
               onChange={handlePlayer}/>
           </li>
@@ -50,6 +42,10 @@ const PlayerForm = () => {
           <li><input type="submit" value="Submit" /></li>
         </ul>
       </form>
+      <div className="none">
+        <h2 className="title-font">Welcome {player}!</h2>
+        <p>You Chose {difficulty.toUpperCase()} Difficulty, Good luck!</p>
+      </div>
     </section>
   );
 }
