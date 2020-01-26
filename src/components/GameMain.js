@@ -1,9 +1,14 @@
 import React from 'react';
+require.context ( '../../public/assets/', true, /\.png$/ );
 
 const GameMain = () => {
   return (
     <article>
-      <div>this is GameMain</div>
+      <section className="game-box">
+        <div>
+          
+        </div>
+      </section>
     </article>
   );
 }
