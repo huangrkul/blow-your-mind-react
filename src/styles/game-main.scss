@@ -148,3 +148,38 @@
   color: $site-red;
   transform: scale(1.1);
 }
+
+//////animation
+.button-away {
+  animation: button-away 600ms ease-in-out forwards;
+}
+
+@keyframes button-away {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.pulse {
+  animation: pulse 500ms ease-in-out forwards;
+}
+
+@keyframes pulse {
+  0% {
+    color: $site-black;
+    transform: scale(1);
+  }
+  50% {
+    color: $site-red;
+    transform: scale(1.1);
+  }
+  100% {
+    color: $site-black;
+    transform: scale(1);
+  }
+}
