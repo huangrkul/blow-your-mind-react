@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.game-buttons {
+.menu-buttons {
   width: 45vw;
   text-align: center;
   margin: 6vw auto;
@@ -17,7 +17,7 @@
   justify-content: space-around;
 }
 
-.game-buttons > div {
+.menu-buttons > div {
   margin: 0 1vw 0 1vw;
   background-color: $site-red-drk;
   border: 1vw solid $site-red-drk;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.game-buttons button {
+.menu-buttons button {
   color: white;
   font-family: $title-font;
   font-size: 1vw;
@@ -37,11 +37,11 @@
   cursor: pointer;
 }
 
-.game-buttons > div:hover {
+.menu-buttons > div:hover {
   transform: scale(1.1,1.1);
 }
 
-.game-buttons > div:hover > button {
+.menu-buttons > div:hover > button {
   color: $site-red;
 }
 

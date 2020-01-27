@@ -25,7 +25,7 @@ const GameStart = () => {
       <h1 className="none">Blow Your Mind - Web Game</h1>
       <div className="logo"><img src={logo} /></div>
       <PlayerForm />
-      <section className="game-buttons">
+      <section className="menu-buttons">
         <div onClick={handleGameStart}><button>START GAME</button></div>        
         <div><button>LEADERBOARD</button></div>
         <div onClick={handleHowTo}><button>HOW TO PLAY</button></div>

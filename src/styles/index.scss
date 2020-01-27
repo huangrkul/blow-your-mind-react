@@ -21,12 +21,16 @@ body {
   background-image: url('../../public/assets/bgpattern.jpg');
   background-size: contain;
   font-family: $base-font;
+  font-size: 1vw;
 }
 
-button:focus {
+*:focus {
   outline: 0;
 }
 
+.hide {
+  opacity: 0;
+}
 
 .title-font {
   font-family: $title-font;
@@ -35,4 +39,3 @@ button:focus {
 .none {
   display: none;
 }
-

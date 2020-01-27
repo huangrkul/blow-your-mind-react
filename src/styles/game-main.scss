@@ -7,8 +7,143 @@
   padding: 0.5vw;
 }
 
-.game-box > div {
+.game-content {
+  position: relative;
+  height: 32vw;
   border: 1vw solid $site-black;
   border-radius: 1vw;
   background-image: url('../../public/assets/game-bg-pattern.png');
+}
+
+.game-content > div, .game-content ul, .counter-box {
+  position: absolute;
+}
+
+.game-content > div {
+  padding: 1vw;
+}
+
+.game-content img {
+  width: 100%;
+}
+
+.game-keys {
+  display: flex;
+  left: 3vw;
+  top: 3vw;
+  width: 20vw;
+  justify-content: space-between;
+}
+
+.game-keys li {
+  padding: 0.2vw;
+  transition: all 600ms ease-in-out;
+}
+
+.game-keys li:nth-child(2) {
+  margin: 0 1.5vw 0 1.5vw;
+}
+
+.game-buttons, .game-bases {
+  display: flex;
+  justify-content: space-between;
+  left: 30vw;
+  top: 15vw;
+  width: 22vw;
+}
+
+.game-buttons li, .game-bases li {
+  padding: 0.5vw;
+  width: 5vw;
+  height: 5vw;
+  background-size: cover;
+}
+
+.game-bases li {
+  background-image: url('../../public/assets/game-button-base.png');
+}
+
+.game-buttons li{
+  background-image: url('../../public/assets/game-button.png');
+  cursor: pointer;
+}
+
+.initial-pos-key1 {
+  transform: translate(27.2vw, 12.3vw);
+}
+
+.initial-pos-key2 {
+  transform: translate(28vw, 12.3vw);
+}
+
+.initial-pos-key3 {
+  transform: translate(29vw, 12.3vw);
+}
+
+.game-buttons li:hover {
+  background-image: url('../../public/assets/game-button-hover.png');
+}
+
+.game-buttons li:active {
+  background-image: url('../../public/assets/game-button-click.png');
+}
+
+.counter-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // outline: 1px solid red;
+  width: 21vw;
+  height: 4vw;
+  left: 2.3vw;
+  top: 24vw;
+}
+
+.counter-box hr {
+  width: 0.1vw;
+  height: 100%;
+  border: 0;
+  border-left: 0.1vw dotted $site-black;
+}
+
+.counter-box div:first-child {
+  font-family: $title-font;
+  text-align: center;
+}
+
+.counter-box p {
+  font-size: 2vw;
+}
+
+.counter-box form {
+  text-align: center;
+  font-family: $title-font;
+}
+
+.counter-box form h4 {
+  margin-bottom: 0.5vw;
+}
+
+.counter-box form input:first-of-type {
+  font-size: 1vw;
+  width: 4vw;
+  border: 0;
+  border-radius: 0.2vw;
+  vertical-align: middle;
+  margin-right: 1vw;
+}
+
+.counter-box form input:last-of-type {
+  background-color: $site-red-drk;
+  border: 10px solid $site-red-drk;
+  border-radius: 10px;
+  font-family: $title-font;
+  color: white;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.counter-box form input:last-of-type:hover {
+  color: $site-red;
+  transform: scale(1.1);
 }
