@@ -5,14 +5,15 @@ import gameLayer0Left from '../../public/assets/game-layer-0-left.png';
 import gameLayer0Center from '../../public/assets/game-layer-0-center.png';
 import gameLayer0Right from '../../public/assets/game-layer-0-right.png';
 import gameLayer1 from '../../public/assets/game-layer-1.png';
+import riddles from '../js/riddles.json';
 import key1 from '../../public/assets/key1.png';
 import key2 from '../../public/assets/key2.png';
 import key3 from '../../public/assets/key3.png';
 import key4 from '../../public/assets/key4.png';
 
-
 const GameMain = () => {
-
+  const keys = [key1, key2, key3, key4];
+  keys.sort(function() { return 0.5 - Math.random() });
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const difficulty = globalState.state.difficulty;
@@ -67,9 +68,9 @@ const GameMain = () => {
       <section className="game-box">
         <div className="game-content">
           <div><img src={gameLayer0} /></div>
-          <div><img src={gameLayer0Left} /></div>
-          <div><img src={gameLayer0Center} /></div>
-          <div><img src={gameLayer0Right} /></div>
+          <div className="hide"><img src={gameLayer0Left} /></div>
+          <div className="hide"><img src={gameLayer0Center} /></div>
+          <div className="hide"><img src={gameLayer0Right} /></div>
           <div><img src={gameLayer1} /></div>
           <ul className="game-bases">
             <li className="hide"></li>
@@ -77,9 +78,9 @@ const GameMain = () => {
             <li className="hide"></li>
           </ul>
           <ul className="game-keys">
-            <li className="initial-pos-key1 hide"><img src={key1} /></li>
-            <li className="initial-pos-key2 hide"><img src={key2} /></li>
-            <li className="initial-pos-key3 hide"><img src={key3} /></li>
+            <li className="initial-pos-key1 hide"><img src={keys[0]} /></li>
+            <li className="initial-pos-key2 hide"><img src={keys[1]} /></li>
+            <li className="initial-pos-key3 hide"><img src={keys[2]} /></li>
           </ul>
           <ul className="game-buttons">
             <li></li>
@@ -100,6 +101,7 @@ const GameMain = () => {
           </section>
         </div>
       </section>
+      
     </article>
   );
 }

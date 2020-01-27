@@ -1,0 +1,194 @@
+{
+  "riddles": 
+  {
+    "easy": 
+    [
+      {
+        "riddle":"I can fly but have no wings. I can cry but I have no eyes. Wherever I go, darkness follows me. What am I?",
+        "hint":"I live in the sky.",
+        "answer":"cloud" 
+      },
+      {
+        "riddle":"The more you take, the more you leave behind.",
+        "hint":"I am attached to you.",
+        "answer":"footsteps"
+      }, 
+      {
+        "riddle":"You can see me in water, but I never get wet. What am I?",
+        "hint":"The man in the mirror.",
+        "answer":"reflection"
+      },
+      {
+        "riddle":"What belongs to you, but others use it more than you do?",
+        "hint":"You are called by this.",
+        "answer":"name"
+      },
+      {
+        "riddle":"If you buy a rooster for the purpose of laying eggs and you expect to get three eggs each day for breakfast, how many eggs will you have after three weeks? (numeric answer only)",
+        "hint":"Who lays the eggs?",
+        "answer":0
+      },
+      {
+        "riddle":"The day before two days after the day before tomorrow is Saturday. What day is it today?",
+        "hint":"It's closer than you think.",
+        "answer":"friday"
+      },
+      {
+        "riddle":"What 4-letter word can be written forward, backward or upside down, and can still be read from left to right?",
+        "hint":"It's in the middle of the day.",
+        "answer":"noon"
+      },
+      {
+        "riddle":"I am beautiful, up in the sky. I am magical, yet I cannot fly. To people I bring luck, to some people, riches. The boy at my end does whatever he wishes. What am I?",
+        "hint":"Sir Charms I say.",
+        "answer":"rainbow"
+      },
+      {
+        "riddle":"Feed me and I live, yet give me a drink and I die",
+        "hint":"Dont't bring red trucks and flashing lights.",
+        "answer":"fire"
+      },
+      {
+        "riddle":"If you have me, you want to share me. If you share me, you haven't got me.What am I?",
+        "hint":"They say this doesn't make friends.",
+        "answer":"secret."
+      },
+      {
+        "riddle":"A kind of tree can you carry in your hand?",
+        "hint":"You see these on tropical beaches.",
+        "answer":"palm"
+      },
+      {
+        "riddle":"What can travel around the world while staying in a corner?",
+        "hint":"Page postage.",
+        "answer":"stamp"
+      }
+    ],
+    "normal":
+    [
+      {
+        "riddle":"What has branches and leaves and no bark?",
+        "hint":"Shhh, this is a quiet place.",
+        "answer":"library"
+      },
+      {
+        "riddle":"The more you take away from it the larger it grows, what is it?",
+        "hint":"Keep diggin', you'll get it.",
+        "answer":"hole"
+      },
+      {
+        "riddle":"What is always on its way here, but never arrives?",
+        "hint":"Not a tangible object.",
+        "answer":"tomorrow"
+      },
+      {
+        "riddle":"I run all around the pasture but never move.  What am I?",
+        "hint":"It keeps things inside.",
+        "answer":"fence"
+      },
+      {
+        "riddle":"What can go up a chimney down but can't go down a chimney up",
+        "hint":"When it is open you are protected.",
+        "answer":"umbrella"
+      },
+      {
+        "riddle":"Who is that with a neck and no head, two arms and no hands?",
+        "hint":"You can have it in different colors.",
+        "answer":"shirt"
+      },
+      {
+        "riddle":"What has a long neck, A name of a bird, Feeds on cargo of ships, it's not alive ?",
+        "hint":"You can fold paper into hits.",
+        "answer":"crane"
+      },
+      {
+        "riddle":"You can see it every day but cannot touch it at will. What is it?'",
+        "hint":"Look it's up.",
+        "answer":"sky"
+      },
+      {
+        "riddle":"A very pretty thing am I, fluttering in the pale-blue sky. Delicate, fragile on the wing, indeed I am a pretty thing. What am I?",
+        "hint":"You can swim this way.",
+        "answer":"butterfly"
+      },
+      {
+        "riddle":"A door is not a door when it is?",
+        "hint":"You can put a lid on it.",
+        "answer":"ajar"
+      },
+      {
+        "riddle":"When you stop and look, you can always see me. If you try to touch, you cannot feel me. I cannot move, but as you near me, I will move away from you.",
+        "hint":"Can be achieved by flipping a switch.",
+        "answer":"darkness"
+      },
+      {
+        "riddle":"No matter how little or how much you use me, you change me every month. What am I?",
+        "hint":"You can look at me.",
+        "answer":"horizon"
+      }
+    ],
+    "hard":
+    [
+      {
+        "riddle":"I cannot be bought, but I can be stolen with one glance. I'm worthless to one but priceless to two.",
+        "hint":"You celebrate me on a holiday but give me every day.",
+        "answer":"love"
+      },
+      {
+        "riddle":"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+        "hint":"Reflected sound from me to you.",
+        "answer":"echo"
+      },
+      {
+        "riddle":"I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+        "hint":"Back in the day I’d fold, but now I just tell you what to do.",
+        "answer":"map"
+      },
+      {
+        "riddle":"What word in the English language does the following: the first two letters signify a male, the first three letters signify a female, the first four letters signify a great, while the entire world signifies a great woman. What is the word?",
+        "hint":"A woman set apart for her courage, nobility and outstanding achievements.",
+        "answer":"heroine"
+      },
+      {
+        "riddle":"What English word has three consecutive double letters?",
+        "hint":"I may work at branches, but no books do I keep, hand me a dollar and I’ll give you a receipt.",
+        "answer":"bookkeeper"
+      },
+      {
+        "riddle":"As a stone inside a tree, I'll help your words outlive thee.  But if you push me as I stand, the more I move the less I am.",
+        "hint":"You need me on your test so you can try your best. But when I break, I won’t be as sharp as the rest.",
+        "answer":"pencil"
+      },
+      {
+        "riddle":"What jumps when it walks and sits when it stands?",
+        "hint":"I live down under, but only found two places, I hop all day, but have no shoelaces.",
+        "answer":"kangaroo"
+      },
+      {
+        "riddle":"A man runs away from home. He turns left and keeps running. After some time, he turns left again and keeps running. He later turns left once more and runs back home. Who was the man in the mask?",
+        "hint":"I guard your home, but won’t alarm you of break-ins, but you need me still because pitching ain’t easy.",
+        "answer":"catcher"
+      },
+      {
+        "riddle":"My twin lives at the reverse of my house number. The difference between our house numbers ends in two. What are the lowest possible numbers of our house? (Two numbers separated by a space)",
+        "hint":"Adams Family went into theaters.",
+        "answer":"19 91"
+      },
+      {
+        "riddle":"It’s been around for millions of years but is never more than a month old. What is it?",
+        "hint":"Hey, diddle, diddle.",
+        "answer":"moon"
+      },      
+      {
+        "riddle":"You throw away the outside, eat the inside, then throw away the inside.",
+        "hint":"You pick me.",
+        "answer":"corn"
+      },
+      {
+        "riddle":"I am a box that holds keys without locks, yet my keys can unlock your deepest senses. What am I?",
+        "hint":"I can be automatic.",
+        "answer":"piano"
+      }
+    ]
+  }
+}
