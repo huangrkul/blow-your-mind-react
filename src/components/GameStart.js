@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import logo from '../../public/assets/logo.png';
 import PlayerForm from './PlayerForm';
+import HowTo from './HowTo';
 import { store } from './store.js';
 
 const GameStart = () => {
@@ -22,7 +23,7 @@ const GameStart = () => {
 
   return (
     <article className="game-start">
-      <h1 className="none">Blow Your Mind - Web Game</h1>
+      <h1 className="dis-none">Blow Your Mind - Web Game</h1>
       <div className="logo"><img src={logo} /></div>
       <PlayerForm />
       <section className="menu-buttons">
@@ -30,14 +31,7 @@ const GameStart = () => {
         <div><button>LEADERBOARD</button></div>
         <div onClick={handleHowTo}><button>HOW TO PLAY</button></div>
       </section>
-      <aside className="howto-container">
-        <span className="title-font" onClick={handleHowTo}>X</span>
-        <p>Click the red button and solve the riddle, win this game you’ll be fit as a fiddle. There’s only two hints so
-          please play nice, for the kill code to win is like rolling dice.
-          <br />
-          <br />
-          Sounds fun, right? Goodluck!</p>
-      </aside>
+      <HowTo />
     </article>
   );
 }

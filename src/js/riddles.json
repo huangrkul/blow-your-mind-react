@@ -100,7 +100,7 @@
       "answer":"crane"
     },
     {
-      "riddle":"You can see it every day but cannot touch it at will. What is it?'",
+      "riddle":"You can see it every day but cannot touch it at will. What is it?",
       "hint":"Look it's up.",
       "answer":"sky"
     },
@@ -122,7 +122,7 @@
     {
       "riddle":"No matter how little or how much you use me, you change me every month. What am I?",
       "hint":"You can look at me.",
-      "answer":"horizon"
+      "answer":"calendar"
     }
   ],
   "hard":

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react';
+import HowTo from './HowTo';
 import { store } from './store.js';
 import { setAni } from '../js/snippets.js';
 import riddles from '../js/riddles.json';
 
 //game assets
+import logoSm from '../../public/assets/logo-sm.png';
 import gameLayer0 from '../../public/assets/game-layer-0.png';
 import gameLayer0Left from '../../public/assets/game-layer-0-left.png';
 import gameLayer0Center from '../../public/assets/game-layer-0-center.png';
@@ -31,8 +33,10 @@ const GameMain = () => {
   let score = 0;
   let chances = 3;
   let hints = 3;
+  let finalCode = '';
   let isRiddleInProgress = false;
   let isAniInProgress = false;
+  let isSameRiddle = false;
 
   //key objects randomized
   const keys = [key1, key2, key3, key4];
@@ -68,6 +72,23 @@ const GameMain = () => {
     }
   }
 
+  const displayChances = () => {
+    const displayDiv = document.querySelector('.riddle-box form span');
+    displayDiv.innerHTML = `Chances left: ${chances}`;
+  }
+
+  const displayHints = () => {
+    const displayDiv = document.querySelector('#hints');
+    displayDiv.innerHTML = hints;
+  }
+
+  const generateCode = () => {
+    for(let i=0; i<4; i++) {
+      let randNum = Math.floor(Math.random() * 10);
+      finalCode += randNum.toString();
+    }
+  }
+
   const countDown = () => {
     intervalTimer = setInterval(() => {
       if(gameTimer > 0) {
@@ -85,33 +106,47 @@ const GameMain = () => {
     let jsonPath;
     switch (diffLevel) {
       case 'easy':
-        gameTimer = 1200;
+        gameTimer = 900;
         jsonPath = riddles.easy;
         break;
       case 'normal':
-        gameTimer = 900;
+        gameTimer = 600;
         jsonPath = riddles.normal;
         break;
       case 'hard':
-        gameTimer = 600;
+        gameTimer = 300;
         jsonPath = riddles.hard;
         break;
     }
     populateRiddles(jsonPath);
     displayTime();
+    displayChances();
+    displayHints();
+    generateCode();
     countDown();
   }
 
   useEffect(() => {
     initTimer();
-  }, []);
+    return () => {clearInterval(intervalTimer);}
+  }, [globalState.state.page]);
+
   /////game initialization end//////
 
   ////Riddle logic/////
   
   const handleCorrect = () => {
     isAniInProgress = true;
+    isSameRiddle = false;
     score++;
+    //clear board and values
+    document.querySelector('#riddle').innerHTML = '';
+    document.querySelector('#answer').value = '';
+    const hintBox = document.querySelector('.hint-box');
+    if(hintBox.classList.contains('aside-enter')) {
+      hintBox.classList.toggle('aside-enter');
+    }
+    //trigger button win animation
     let currentKey;
     let currentBase;
     let currentPipe;
@@ -135,23 +170,76 @@ const GameMain = () => {
     setAni(currentBase,0,'hide','remove');
     setAni(currentKey,0,'hide','remove');
     setAni(`.${currentButton}`,0,'button-away');
+    setAni(`.${currentButton}`,600,'vis-none');
     setAni(currentKey,600,'','clear');
     setAni(currentPipe,1200,'hide','remove');
+    
     setTimeout(() => {
       isRiddleInProgress = false;
       isAniInProgress = false;
+      if(score === 3) {
+        revealCode();
+      }
     },1600)
+
+
   }
 
   const handleIncorrect = () => {
-    
+    if(chances > 1) {
+      chances--;
+      setAni('#answer',0,'shake');
+      setAni('#answer',750,'shake','remove');
+      document.querySelector('#answer').value = '';
+      displayChances();
+    } else {
+      dispatch({type: 'pageSwap', payload: 'lose'})
+    }
+  }
+
+  const handleHint = () => {
+    const hintBox = document.querySelector('.hint-box');
+    const hintContent = document.querySelector('.hint-box p');
+    if(isRiddleInProgress) {
+      if(hints > 0) {
+        hintContent.innerHTML = currentRiddle.hint;
+        hintBox.classList.toggle('aside-enter');
+        if (!isSameRiddle) {
+          hints--;
+          isSameRiddle = true;
+          displayHints();
+        }
+      } else {
+        hintContent.innerHTML = 'Sorry, you ran out of hints';
+        hintBox.classList.toggle('aside-enter');
+      }
+    }
+  }
+
+  const handleHowTo = () => {
+    document.querySelector('.howto-container').classList.toggle('howto-enter');
+  }
+
+  const revealCode = () => {
+    document.querySelector('.final-code p').innerHTML = finalCode;
+    document.querySelector('.final-code').classList.toggle('aside-enter');
+  }
+
+  const handleCodeSubmit = (event) => {
+    event.preventDefault();
+    const input = document.querySelector('#inputCode').value;
+    if(input === finalCode) {
+      dispatch({type: 'pageSwap', payload: 'win'});
+    } else {
+      dispatch({type: 'pageSwap', payload: 'lose'}); 
+    }
   }
 
   const handleAnswer = (event) => {
     event.preventDefault();
     if(isRiddleInProgress && !isAniInProgress){
       const answer = document.querySelector('#answer').value;
-      if(answer.toLowerCase() === currentRiddle.answer ){
+      if(answer.toLowerCase() === currentRiddle.answer){
         handleCorrect();
       } else {
         handleIncorrect();
@@ -161,7 +249,6 @@ const GameMain = () => {
 
   const startRiddle = (event) => {
     currentButton = event.target.classList[0];
-    console.log(currentButton);
     if(!isRiddleInProgress){
       isRiddleInProgress = true;
       currentRiddle = allRiddles[score];
@@ -170,7 +257,8 @@ const GameMain = () => {
   }
 
   return (
-    <article>
+    <article className="main-game">
+      <section><img src={logoSm} title="Back to Home" onClick={() => dispatch({type: 'pageSwap', payload: 'start'})}/></section>
       <section className="game-box">
         <div className="game-content">
           <div><img src={gameLayer0} /></div>
@@ -199,9 +287,9 @@ const GameMain = () => {
               <p className="counter"></p>
             </div>
             <hr></hr>
-            <form>
+            <form onSubmit={handleCodeSubmit}>
               <h4>Disengage Code</h4>
-              <input maxLength="4" required />
+              <input id="inputCode" maxLength="4" required autoComplete="off" />
               <input type="submit" value="Submit" />
             </form>
           </section>
@@ -209,15 +297,27 @@ const GameMain = () => {
       </section>
       <section className="riddle-box">
         <div>
-          <h2></h2>
-          <p id="riddle"></p>
+          <h3 className="title-font">-Riddle-</h3>
+          <p id="riddle">Click on the red buttons to start the game!</p>
           <form onSubmit={handleAnswer}>
-            <input id="answer" maxLength="20" required />
+            <input id="answer" maxLength="20" required autoComplete="off" placeholder="Answer..." />
             <input type="submit" value="Submit" />
+            <span></span>
           </form>
         </div>
-        <div></div>
+        <div className="help-buttons">
+          <div><button onClick={handleHowTo}>How to Play</button></div>
+          <div><button onClick={handleHint}>Hint:<span id="hints"></span></button></div>
+        </div>
       </section>
+      <HowTo />
+      <aside className="hint-box">
+        <span className="title-font" onClick={handleHint}>X</span>
+        <p></p>
+      </aside>
+      <aside className="final-code title-font">
+        <p></p>
+      </aside>
     </article>
   );
 }

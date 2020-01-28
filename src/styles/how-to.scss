@@ -1,0 +1,32 @@
+.howto-container {
+  position: fixed;
+  top: 20vh;
+  right: -20vw;
+  width: 15vw;
+  background-color: $site-brown;
+  border: 1vw solid $site-brown;
+  border-radius: 1vw;
+  text-align: right;
+  transition: all 500ms ease-in-out;
+}
+
+.howto-container span{
+  color: white;
+  cursor: pointer;
+}
+
+.howto-container span:hover{
+  color: $site-red;
+}
+
+.howto-container p{
+  text-align: left;
+  margin-top: 1vw;
+  background-color: $site-yellow-lgt;
+  border: 1vw solid $site-yellow-lgt;
+  border-radius: 1vw;
+}
+
+.howto-enter {
+  right: 0%;
+}

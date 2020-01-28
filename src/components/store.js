@@ -4,8 +4,7 @@ const initialState = {
   page: 'main',
   player: '',
   difficulty: 'normal',
-  isSubmitted: false,
-  eventsStopped: false
+  isSubmitted: false
 };
 
 const store = createContext(initialState);
@@ -22,8 +21,6 @@ const StateProvider = ( { children } ) => {
         return {...state, player: action.payload};
       case 'submit':
         return {...state, isSubmitted: action.payload};
-      case 'stop':
-        return {...state, eventsStopped: action.payload};
       default:
         throw new Error();
     };

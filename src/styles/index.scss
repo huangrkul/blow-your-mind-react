@@ -15,6 +15,7 @@ $base-font: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
   list-style-type: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -36,6 +37,10 @@ body {
   font-family: $title-font;
 }
 
-.none {
+.vis-none {
+  visibility: hidden;
+}
+
+.dis-none {
   display: none;
 }
