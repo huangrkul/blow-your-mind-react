@@ -87,6 +87,7 @@ const GameMain = () => {
       let randNum = Math.floor(Math.random() * 10);
       finalCode += randNum.toString();
     }
+    console.log(finalCode);
   }
 
   const countDown = () => {
@@ -128,25 +129,55 @@ const GameMain = () => {
 
   useEffect(() => {
     initTimer();
-    return () => {clearInterval(intervalTimer);}
+    return () => {
+      clearInterval(intervalTimer);
+    }
   }, [globalState.state.page]);
 
   /////game initialization end//////
 
   ////Riddle logic/////
-  
-  const handleCorrect = () => {
-    isAniInProgress = true;
-    isSameRiddle = false;
-    score++;
-    //clear board and values
-    document.querySelector('#riddle').innerHTML = '';
-    document.querySelector('#answer').value = '';
+
+  const handleHint = () => {
     const hintBox = document.querySelector('.hint-box');
-    if(hintBox.classList.contains('aside-enter')) {
-      hintBox.classList.toggle('aside-enter');
+    const hintContent = document.querySelector('.hint-box p');
+    if(isRiddleInProgress) {
+      if(hints > 0) {
+        hintContent.innerHTML = currentRiddle.hint;
+        hintBox.classList.toggle('aside-enter');
+        if (!isSameRiddle) {
+          hints--;
+          isSameRiddle = true;
+          displayHints();
+        }
+      } else {
+        hintContent.innerHTML = 'Sorry, you ran out of hints';
+        hintBox.classList.toggle('aside-enter');
+      }
     }
-    //trigger button win animation
+  }
+
+  const handleHowTo = () => {
+    document.querySelector('.howto-container').classList.toggle('howto-enter');
+  }
+
+  const handleCodeSubmit = (event) => {
+    event.preventDefault();
+    const input = document.querySelector('#inputCode').value;
+    if(input === finalCode) {
+      dispatch({type: 'updateRank', time: gameTimer, chance: chances, hint: hints});
+      dispatch({type: 'pageSwap', payload: 'win'});
+    } else {
+      dispatch({type: 'pageSwap', payload: 'lose'}); 
+    }
+  }
+
+  const revealCode = () => {
+    document.querySelector('.final-code p').innerHTML = finalCode;
+    document.querySelector('.final-code').classList.toggle('aside-enter');
+  }
+
+  const correctAnimation = () => {
     let currentKey;
     let currentBase;
     let currentPipe;
@@ -181,8 +212,20 @@ const GameMain = () => {
         revealCode();
       }
     },1600)
+  }
 
-
+  const handleCorrect = () => {
+    isAniInProgress = true;
+    isSameRiddle = false;
+    score++;
+    //clear board and values
+    document.querySelector('#riddle').innerHTML = '';
+    document.querySelector('#answer').value = '';
+    const hintBox = document.querySelector('.hint-box');
+    if(hintBox.classList.contains('aside-enter')) {
+      hintBox.classList.toggle('aside-enter');
+    }
+    correctAnimation();
   }
 
   const handleIncorrect = () => {
@@ -194,44 +237,6 @@ const GameMain = () => {
       displayChances();
     } else {
       dispatch({type: 'pageSwap', payload: 'lose'})
-    }
-  }
-
-  const handleHint = () => {
-    const hintBox = document.querySelector('.hint-box');
-    const hintContent = document.querySelector('.hint-box p');
-    if(isRiddleInProgress) {
-      if(hints > 0) {
-        hintContent.innerHTML = currentRiddle.hint;
-        hintBox.classList.toggle('aside-enter');
-        if (!isSameRiddle) {
-          hints--;
-          isSameRiddle = true;
-          displayHints();
-        }
-      } else {
-        hintContent.innerHTML = 'Sorry, you ran out of hints';
-        hintBox.classList.toggle('aside-enter');
-      }
-    }
-  }
-
-  const handleHowTo = () => {
-    document.querySelector('.howto-container').classList.toggle('howto-enter');
-  }
-
-  const revealCode = () => {
-    document.querySelector('.final-code p').innerHTML = finalCode;
-    document.querySelector('.final-code').classList.toggle('aside-enter');
-  }
-
-  const handleCodeSubmit = (event) => {
-    event.preventDefault();
-    const input = document.querySelector('#inputCode').value;
-    if(input === finalCode) {
-      dispatch({type: 'pageSwap', payload: 'win'});
-    } else {
-      dispatch({type: 'pageSwap', payload: 'lose'}); 
     }
   }
 

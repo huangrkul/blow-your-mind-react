@@ -4,6 +4,9 @@ const initialState = {
   page: 'main',
   player: '',
   difficulty: 'normal',
+  timeLeft: 0,
+  chancesLeft: 0,
+  hintsLeft: 0,
   isSubmitted: false
 };
 
@@ -21,6 +24,8 @@ const StateProvider = ( { children } ) => {
         return {...state, player: action.payload};
       case 'submit':
         return {...state, isSubmitted: action.payload};
+      case 'updateRank':
+        return {...state, timeLeft: action.time, chancesLeft: action.chance, hintsLeft: action.hint};
       default:
         throw new Error();
     };

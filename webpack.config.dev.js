@@ -8,7 +8,7 @@ module.exports = merge(common, {
   devServer: {
     // port: 3000,
     proxy: {
-      '/weather': 'http://localhost:3000'
+      '/rank': 'http://localhost:3000'
     }
   },
   module: {
