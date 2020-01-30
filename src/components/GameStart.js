@@ -54,6 +54,7 @@ const GameStart = () => {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       rankPath = '/showRanks';
     } else {
+      rankPath = 'https://huangrkul-blow-your-mind.herokuapp.com/showRanks';
     }
     axios.get(rankPath)
       .then(res => {

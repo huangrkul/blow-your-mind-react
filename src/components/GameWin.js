@@ -49,6 +49,7 @@ const GameWin = () => {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       postPath = '/postRank';
     } else {
+      postPath = 'https://huangrkul-blow-your-mind.herokuapp.com/postRank';
     }
 
     axios.post(postPath, {
