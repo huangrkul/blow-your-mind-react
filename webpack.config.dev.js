@@ -8,7 +8,8 @@ module.exports = merge(common, {
   devServer: {
     // port: 3000,
     proxy: {
-      '/rank': 'http://localhost:3000'
+      '/postRank': 'http://localhost:3000',
+      '/showRank': 'http://localhost:3000'
     }
   },
   module: {

@@ -1,13 +1,17 @@
 import React, {createContext, useReducer} from 'react';
 
 const initialState = {
-  page: 'main',
+  page: 'start',
   player: '',
   difficulty: 'normal',
   timeLeft: 0,
   chancesLeft: 0,
   hintsLeft: 0,
-  isSubmitted: false
+  isSubmitted: false,
+  ranks: [],
+  timeEasy: 900,
+  timeNorm: 600,
+  timeHard: 300
 };
 
 const store = createContext(initialState);
@@ -26,6 +30,8 @@ const StateProvider = ( { children } ) => {
         return {...state, isSubmitted: action.payload};
       case 'updateRank':
         return {...state, timeLeft: action.time, chancesLeft: action.chance, hintsLeft: action.hint};
+      case 'showRanks':
+        return {...state, ranks: action.payload};
       default:
         throw new Error();
     };

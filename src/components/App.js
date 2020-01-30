@@ -15,6 +15,7 @@ const components = {
 const App = () => {
   const globalState = useContext(store);
   const PageToRender = components[globalState.state.page];
+
   return (
     <main>
       <PageToRender />

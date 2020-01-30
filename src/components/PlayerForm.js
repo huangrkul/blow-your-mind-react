@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { store } from './store.js';
+import { formatTime } from '../js/snippets.js';
 
 const PlayerForm = () => {
 
@@ -18,8 +19,8 @@ const PlayerForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    document.querySelector('.player-form form').classList.toggle('none');
-    document.querySelector('.player-form > div').classList.toggle('none');
+    document.querySelector('.player-form form').classList.toggle('dis-none');
+    document.querySelector('.player-form > div').classList.toggle('dis-none');
     dispatch({type: 'submit', payload: true});
   }
 
@@ -34,15 +35,15 @@ const PlayerForm = () => {
           </li>
           <li><label htmlFor="difficulty" className="title-font">DIFFICULTY:</label></li>
           <li><select id="difficulty" value={difficulty} onChange={handleDifficulty}>
-              <option value="easy">Easy (20 mins)</option>
-              <option value="normal">Normal (15 mins)</option>
-              <option value="hard">Hard (10 mins)</option>
+              <option value="easy">Easy ({formatTime(globalState.state.timeEasy)})</option>
+              <option value="normal">Normal ({formatTime(globalState.state.timeNorm)})</option>
+              <option value="hard">Hard ({formatTime(globalState.state.timeHard)})</option>
             </select>
           </li>
           <li><input type="submit" value="Submit" /></li>
         </ul>
       </form>
-      <div className="none">
+      <div className="dis-none">
         <h2 className="title-font">Welcome {player}!</h2>
         <p>You Chose {difficulty.toUpperCase()} Difficulty, Good luck!</p>
       </div>

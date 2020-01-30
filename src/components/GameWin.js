@@ -5,34 +5,67 @@ import { store } from './store.js';
 const GameWin = () => {
 
   const globalState = useContext(store);
-  // const { dispatch } = globalState;
+  const stats = globalState.state;
+  const { dispatch } = globalState;
 
-  const updateRank = () => {
+  const calcTotal = () => {
+    let maxTime = 0;
+    let totalScore = 0;
 
-    let dataPath;
+    switch(stats.difficulty) {
+      case 'easy':
+        maxTime = globalState.state.timeEasy;
+        totalScore += 0;
+        break;
+      case 'normal':
+        maxTime = globalState.state.timeNorm;
+        totalScore += 100;
+        break;
+      case 'hard':
+        maxTime = globalState.state.timeHard;
+        totalScore += 200;
+    }
+
+    let timeScore = maxTime - stats.timeLeft;
+    totalScore += timeScore;
+    totalScore += (stats.chancesLeft * 100);
+    totalScore += (stats.hintsLeft * 10);
+    updateRank(totalScore);
+  }
+
+  const updateRank = (score) => {
+
+    let postPath;
+    if(stats.player === '') {
+      stats.player = 'Anonymous';
+    }
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      dataPath = '/rank';
+      postPath = '/postRank';
     } else {
     }
-    
-    axios.post(dataPath, {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
+
+    axios.post(postPath, {
+      player: stats.player,
+      difficulty: stats.difficulty,
+      time: stats.timeLeft,
+      chance: stats.chancesLeft,
+      hint: stats.hintsLeft,
+      total: score
     })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
 
   useEffect(() => {
-    updateRank();
+    calcTotal();
     return () => {}
   }, []);
 
+  const handleReturn = () => {
+    dispatch({type: 'pageSwap', payload: 'start'});
+  }
 
   return (
     <article>
-      <div>this is GameWin</div>
+      <div><button onClick={handleReturn}>PLAY AGAIN</button></div>
     </article>
   );
 }

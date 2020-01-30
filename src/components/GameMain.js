@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import HowTo from './HowTo';
 import { store } from './store.js';
-import { setAni } from '../js/snippets.js';
+import { setAni, formatTime } from '../js/snippets.js';
 import riddles from '../js/riddles.json';
 
 //game assets
@@ -59,13 +59,7 @@ const GameMain = () => {
 
   const displayTime = () => {
     const timerDiv = document.querySelector('.counter');
-    const minValue = Math.floor((gameTimer/60) % 60);
-    const secValue = Math.floor(gameTimer % 60);
-
-    const min = minValue < 10 ? `0${minValue}` : minValue;
-    const sec = secValue < 10 ? `0${secValue}` : secValue;
-
-    timerDiv.innerHTML = `${min}:${sec}`;
+    timerDiv.innerHTML = formatTime(gameTimer);;
     if(gameTimer < 10) {
       setAni('.counter',0,'pulse');
       timerDiv.classList.remove('pulse');
@@ -87,7 +81,7 @@ const GameMain = () => {
       let randNum = Math.floor(Math.random() * 10);
       finalCode += randNum.toString();
     }
-    console.log(finalCode);
+    // console.log(finalCode);
   }
 
   const countDown = () => {
@@ -107,15 +101,15 @@ const GameMain = () => {
     let jsonPath;
     switch (diffLevel) {
       case 'easy':
-        gameTimer = 900;
+        gameTimer = globalState.state.timeEasy;
         jsonPath = riddles.easy;
         break;
       case 'normal':
-        gameTimer = 600;
+        gameTimer = globalState.state.timeNorm;
         jsonPath = riddles.normal;
         break;
       case 'hard':
-        gameTimer = 300;
+        gameTimer = globalState.state.timeHard;
         jsonPath = riddles.hard;
         break;
     }
@@ -321,6 +315,7 @@ const GameMain = () => {
         <p></p>
       </aside>
       <aside className="final-code title-font">
+        <h3>ENTER THE CODE:</h3>
         <p></p>
       </aside>
     </article>

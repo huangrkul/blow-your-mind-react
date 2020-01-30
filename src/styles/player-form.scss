@@ -1,11 +1,11 @@
 .player-form {
   position: relative;
-  width: 20vw;
+  width: 22vw;
   margin: -2.5vw auto;
   background-color: $site-brown;
   border: 1.3vw solid $site-brown;
   border-radius: 1.3vw;
-  z-index: 999;
+  z-index: 9;
 }
 
 .player-form form, .player-form > div {

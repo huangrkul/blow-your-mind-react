@@ -45,3 +45,45 @@
 .menu-buttons > div:hover > button {
   color: $site-red;
 }
+
+.leaderboard {
+  position: fixed;
+  left: 50%;
+  margin-left: -25%;
+  top: -200%;
+  width: 50vw;
+  height: 36vw;
+  padding: 1vw;
+  background-color: $site-brown;
+  border: 1vw solid $site-brown;
+  border-radius: 1vw;
+  z-index: 99;
+  transition: top 600ms ease-in-out;
+}
+
+.lead-enter {
+  top: 4%;
+}
+
+.leaderboard div{
+  background-color: $site-yellow-lgt;
+  border: 1vw solid $site-yellow-lgt;
+  border-radius: 1vw;
+  height: 100%;
+}
+
+
+.leaderboard ul {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.leaderboard ul li {
+  flex: 0 0 15%;
+  padding: 0.2vw;
+}
+
+.leaderboard ul:nth-child(even) {
+  background-color: $site-yellow;
+}

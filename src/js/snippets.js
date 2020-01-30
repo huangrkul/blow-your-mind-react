@@ -12,3 +12,11 @@ export function setAni(el, time, classname, action) {
     }
   },time);
 }
+
+export function formatTime(time) {
+  const minValue = Math.floor((time/60) % 60);
+  const secValue = Math.floor(time % 60);
+  const min = minValue < 10 ? `0${minValue}` : minValue;
+  const sec = secValue < 10 ? `0${secValue}` : secValue;
+  return `${min}:${sec}`;
+}
