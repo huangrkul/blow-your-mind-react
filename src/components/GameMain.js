@@ -125,6 +125,7 @@ const GameMain = () => {
     initTimer();
     return () => {
       clearInterval(intervalTimer);
+
     }
   }, [globalState.state.page]);
 
@@ -289,7 +290,7 @@ const GameMain = () => {
             <form onSubmit={handleCodeSubmit}>
               <h4>Disengage Code</h4>
               <input id="inputCode" maxLength="4" required autoComplete="off" />
-              <input type="submit" value="Submit" />
+              <input type="submit" formAction="#top" value="Submit" />
             </form>
           </section>
         </div>

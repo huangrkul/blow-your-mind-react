@@ -69,7 +69,6 @@ const GameStart = () => {
 
   return (
     <article className="game-start">
-      <h1 className="dis-none">Blow Your Mind - Web Game</h1>
       <div className="logo"><img src={logo} /></div>
       <PlayerForm />
       <section className="menu-buttons">

@@ -33,8 +33,8 @@ const GameWin = () => {
 
     let timeScore = totalScore - stats.timeLeft;
     totalScore -= timeScore;
-    totalScore += (stats.chancesLeft * 100);
-    totalScore += (stats.hintsLeft * 100);
+    totalScore += (stats.chancesLeft * 10);
+    totalScore += (stats.hintsLeft * 10);
     document.querySelector('.stat-box h3').innerHTML = `Total Score: ${totalScore}`;
     updateRank(totalScore);
     winAnimation();
@@ -73,6 +73,7 @@ const GameWin = () => {
 
   useEffect(() => {
     calcTotal();
+    window.scrollTo(0, 0);
     return () => {}
   }, []);
 

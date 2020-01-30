@@ -17,7 +17,10 @@ const App = () => {
   const PageToRender = components[globalState.state.page];
 
   return (
-    <main>
+    <main id="top">
+      <header className="dis-none">
+        <h1>Blow Your Mind - Web Game</h1>
+      </header>
       <PageToRender />
     </main>
   );

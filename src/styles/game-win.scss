@@ -50,36 +50,6 @@
   border-left: 1px dotted $site-black;
 }
 
-.end-menu {
-  display: inline-block;
-  margin: 1vw auto;
-  text-align: center;
-  background-color: $site-red-drk;
-  border: 0.5vw solid $site-red-drk;
-  border-radius: 0.5vw;
-  transition: all 300ms ease;
-  cursor: pointer;
-}
-
-.end-menu button {
-  color: white;
-  font-family: $title-font;
-  font-size: 1vw;
-  background-color: $site-black;
-  border: 0.5vw solid $site-black;
-  border-radius: 0.5vw;
-  transition: all 300ms ease;
-  cursor: pointer;
-}
-
-.end-menu:hover {
-  transform: scale(1.1,1.1);
-}
-
-.end-menu:hover > button {
-  color: $site-red;
-}
-
 .reveal-score {
   animation: reveal-score 400ms ease-out  forwards ;
 }
