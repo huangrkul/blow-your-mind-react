@@ -1,0 +1,95 @@
+.win-box {
+  position: relative;
+  margin: 4vw auto;
+  width: 50vw; 
+  height: 30vw;
+  background-image: url('../../public/assets/winpage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.win-box img {
+  position: absolute;
+  width: 50%;
+}
+
+.stat-box {
+  width: 20vw;
+  text-align: center;
+  margin: 1vw auto;
+  background-color: $site-brown;
+  border: 1vw solid $site-brown;
+  border-radius: 1vw;
+}
+
+.stat-box > div {
+  background-color: $site-yellow-lgt;
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+.stat-box ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.stat-box li {
+  flex: 0 0 50%;
+  margin-bottom: 0.5vw;
+  text-align: left;
+}
+
+.stat-box h3 {
+  margin-top: 0.5vw;
+  text-align: center;
+}
+
+.stat-box li:nth-child(even) {
+  text-align: right;
+  border-left: 1px dotted $site-black;
+}
+
+.end-menu {
+  display: inline-block;
+  margin: 1vw auto;
+  text-align: center;
+  background-color: $site-red-drk;
+  border: 0.5vw solid $site-red-drk;
+  border-radius: 0.5vw;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.end-menu button {
+  color: white;
+  font-family: $title-font;
+  font-size: 1vw;
+  background-color: $site-black;
+  border: 0.5vw solid $site-black;
+  border-radius: 0.5vw;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.end-menu:hover {
+  transform: scale(1.1,1.1);
+}
+
+.end-menu:hover > button {
+  color: $site-red;
+}
+
+.reveal-score {
+  animation: reveal-score 400ms ease-out  forwards ;
+}
+@keyframes reveal-score {
+  0% {
+    transform: translateY(-13vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-18vw);
+    opacity: 1;
+  }
+}

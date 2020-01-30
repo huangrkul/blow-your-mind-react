@@ -10,6 +10,8 @@ $base-font: 'Roboto', sans-serif;
 
 @import './game-start.scss';
 @import './game-main.scss';
+@import './game-win.scss';
+@import './game-lose.scss';
 
 * {
   padding: 0;
@@ -43,4 +45,94 @@ body {
 
 .dis-none {
   display: none;
+}
+
+
+//global animation
+.zoom-enter {
+  animation: zoomenter 400ms ease-in  forwards ;
+}
+@keyframes zoomenter {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1, 1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.enter-bottom {
+  animation: enter-bottom 400ms ease-in-out  forwards ;
+}
+@keyframes enter-bottom {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-2%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fadezoombump{
+  animation: zoombump 400ms ease-in  forwards ;
+}
+@keyframes zoombump {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05, 1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95, 0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.fadezoombump-hero{
+  animation: zoombump-big 600ms ease-in  forwards ;
+}
+@keyframes zoombump-big {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1, 1.1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.9, 0.9);
+    opacity: 1;
+  } 
+  80% {
+    transform: scale(1.02, 1.02);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(0.98, 0.98);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
 }

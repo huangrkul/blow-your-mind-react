@@ -100,17 +100,12 @@
       "answer":"crane"
     },
     {
-      "riddle":"You can see it every day but cannot touch it at will. What is it?",
-      "hint":"Look it's up.",
-      "answer":"sky"
-    },
-    {
       "riddle":"A very pretty thing am I, fluttering in the pale-blue sky. Delicate, fragile on the wing, indeed I am a pretty thing. What am I?",
-      "hint":"You can swim this way.",
+      "hint":"I am also a swimming technique.",
       "answer":"butterfly"
     },
     {
-      "riddle":"A door is not a door when it is?",
+      "riddle":"A door is not opened nor closed?",
       "hint":"You can put a lid on it.",
       "answer":"ajar"
     },
