@@ -1,13 +1,14 @@
 .howto-container {
   position: fixed;
   top: 20vh;
-  right: -20vw;
+  right: -120%;
   width: 15vw;
   background-color: $site-brown;
   border: 1vw solid $site-brown;
   border-radius: 1vw;
   text-align: right;
   transition: all 500ms ease-in-out;
+  z-index: 999;
 }
 
 .howto-container span{
@@ -25,6 +26,18 @@
   background-color: $site-yellow-lgt;
   border: 1vw solid $site-yellow-lgt;
   border-radius: 1vw;
+}
+
+@media (max-width: 1024px) {
+  .howto-container {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .howto-container {
+    width: 45vw;
+  }
 }
 
 .howto-enter {

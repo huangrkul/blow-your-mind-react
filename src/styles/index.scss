@@ -27,6 +27,10 @@ body {
   font-size: 1vw;
 }
 
+button {
+  font-size: 1vw;
+}
+
 *:focus {
   outline: 0;
 }
@@ -61,7 +65,6 @@ body {
 .end-menu button {
   color: white;
   font-family: $title-font;
-  font-size: 1vw;
   background-color: $site-black;
   border: 0.5vw solid $site-black;
   border-radius: 0.5vw;
@@ -77,6 +80,24 @@ body {
   color: $site-red;
 }
 
+@media (max-width: 1024px) {
+  body, button {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  body, button {
+    font-size: 3vw;
+  }
+}
+
+
+// @media (max-width: 1024px) {
+// }
+
+// @media (max-width: 768px) {
+// }
 
 //global animation
 .zoom-enter {

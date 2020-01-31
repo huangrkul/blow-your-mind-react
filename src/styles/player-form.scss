@@ -62,3 +62,38 @@
   padding: 2vw 0 2vw 0;
   text-align: center;
 }
+
+@media (max-width: 1024px) {
+  .player-form {
+    width: 33vw;
+    margin: -3.5vw auto; 
+  }
+  .player-form ul li {
+    flex: 0 0 50%;
+  }
+  
+  .player-form form label, .player-form form select, .player-form input {
+    font-size: 1.6vw;
+  }
+  .player-form ul li:last-child input {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-form {
+    width: 50vw;
+    margin: -3.5vw auto; 
+  }
+  .player-form ul li {
+    flex: 0 0 50%;
+    margin-bottom: 1vw;
+  }
+  
+  .player-form form label, .player-form form select, .player-form input {
+    font-size: 2.2vw;
+  }
+  .player-form ul li:last-child input {
+    font-size: 3vw;
+  }
+}
