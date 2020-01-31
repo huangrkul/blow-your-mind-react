@@ -1,9 +1,12 @@
-.main-game section:first-of-type {
+.main-game > section:first-of-type {
   text-align: center;
+  margin: 1vw auto;
+  width: 18vw;
 }
 
 .main-game section:first-of-type img {
   cursor: pointer;
+  width: 100%;
 }
 
 .game-box {
@@ -104,10 +107,10 @@
 }
 
 .counter-box hr {
-  width: 0.1vw;
+  width: 0.3vw;
   height: 100%;
   border: 0;
-  border-left: 0.1vw dotted $site-black;
+  border-left: 0.3vw dotted $site-black;
 }
 
 .counter-box div:first-child {
@@ -248,6 +251,138 @@
   left: 0%;
 }
 
+@media (max-width: 1024px) {
+  .game-box {
+    width: 70vw;
+  }
+  .game-content {
+    height: 38vw;
+  }
+  .game-keys {
+    left: 2.3vw;
+    top: 2.5vw;
+    width: 24vw;
+  }
+  .counter-box {
+    width: 25vw;
+    height: 4vw;
+    left: 2vw;
+    top: 27.5vw;
+  }
+
+  .counter-box h4{
+    font-size: 1.4vw;
+  }
+
+  .game-buttons, .game-bases {
+    left: 33.5vw;
+    top: 16vw;
+    width: 25vw;
+  }
+  
+  .game-buttons li, .game-bases li {
+    width: 6.5vw;
+    height: 6.5vw;
+  }
+
+  .initial-pos-key1 {
+    transform: translate(30.5vw, 13vw);
+  }
+  
+  .initial-pos-key2 {
+    transform: translate(31.8vw, 13vw);
+  }
+  
+  .initial-pos-key3 {
+    transform: translate(33vw, 13vw);
+  }
+
+  .riddle-box {
+    width: 70vw;
+  }
+
+  .riddle-box p {
+    min-height: 8vw;
+  }
+
+  .help-buttons {
+    flex: 0 0 30%;
+    text-align: center;
+  }
+  
+  .help-buttons button {
+    width: 12vw;
+  }
+  
+  .counter-box form input:last-of-type, .riddle-box form input:last-of-type, .help-buttons button {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-box {
+    width: 80vw;
+  }
+  .game-content {
+    height: 46vw;
+  }
+  .game-keys {
+    left: 2.3vw;
+    top: 2.8vw;
+    width: 28.8vw;
+  }
+  .counter-box {
+    width: 26vw;
+    height: 4vw;
+    left: 4vw;
+    top: 32.2vw;
+  }
+  .counter-box h4{
+    font-size: 1.5vw;
+  }
+  .game-buttons, .game-bases {
+    left: 38.5vw;
+    top: 18.5vw;
+    width: 30vw;
+  }
+  
+  .game-buttons li, .game-bases li {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .initial-pos-key1 {
+    transform: translate(35.5vw, 15.2vw);
+  }
+  
+  .initial-pos-key2 {
+    transform: translate(36.7vw, 15.2vw);
+  }
+  
+  .initial-pos-key3 {
+    transform: translate(38.2vw, 15.2vw);
+  }
+
+  .riddle-box {
+    width: 80vw;
+  }
+
+  .riddle-box p {
+    min-height: 14vw;
+  }
+
+  .help-buttons {
+    flex: 0 0 30%;
+    text-align: center;
+  }
+  
+  .help-buttons button {
+    width: 15vw;
+  }
+  .counter-box form input:last-of-type, .riddle-box form input:last-of-type, .help-buttons button {
+    font-size: 2vw;
+  }
+}
 
 //////animation
 .button-away {

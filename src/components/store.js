@@ -1,7 +1,7 @@
 import React, {createContext, useReducer} from 'react';
 
 const initialState = {
-  page: 'start',
+  page: 'main',
   player: '',
   difficulty: 'normal',
   timeLeft: 0,
