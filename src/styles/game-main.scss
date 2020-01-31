@@ -202,7 +202,7 @@
 .hint-box {
   position: fixed;
   top: 20vh;
-  left: -20vw;
+  left: -120%;
   width: 15vw;
   background-color: $site-brown;
   border: 1vw solid $site-brown;
@@ -297,6 +297,10 @@
     transform: translate(33vw, 13vw);
   }
 
+  .hint-box {
+    width: 25vw;
+  }
+
   .riddle-box {
     width: 70vw;
   }
@@ -317,9 +321,16 @@
   .counter-box form input:last-of-type, .riddle-box form input:last-of-type, .help-buttons button {
     font-size: 1.2vw;
   }
+  .riddle-box form input:first-of-type {
+    font-size: 2vw;
+    width: 15vw;
+  }
 }
 
 @media (max-width: 768px) {
+  .main-game > section:first-of-type {
+    width: 25vw;
+  }
   .game-box {
     width: 80vw;
   }
@@ -332,7 +343,7 @@
     width: 28.8vw;
   }
   .counter-box {
-    width: 26vw;
+    width: 27vw;
     height: 4vw;
     left: 4vw;
     top: 32.2vw;
@@ -363,6 +374,11 @@
     transform: translate(38.2vw, 15.2vw);
   }
 
+  .hint-box {
+    width: 40vw;
+  }
+
+
   .riddle-box {
     width: 80vw;
   }
@@ -381,6 +397,16 @@
   }
   .counter-box form input:last-of-type, .riddle-box form input:last-of-type, .help-buttons button {
     font-size: 2vw;
+  }
+
+  .counter-box form input:first-of-type {
+    font-size: 1.5vw;
+    width: 4vw;
+  }
+
+  .riddle-box form input:first-of-type {
+    font-size: 2vw;
+    width: 15vw;
   }
 }
 

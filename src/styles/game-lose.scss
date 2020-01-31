@@ -14,3 +14,13 @@
   position: absolute;
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .lose-box {
+    width: 70vw; 
+    height: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+}

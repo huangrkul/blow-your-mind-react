@@ -136,7 +136,7 @@ const GameMain = () => {
   const handleHint = () => {
     const hintBox = document.querySelector('.hint-box');
     const hintContent = document.querySelector('.hint-box p');
-    if(isRiddleInProgress) {
+    if(isRiddleInProgress && !isAniInProgress) {
       if(hints > 0) {
         hintContent.innerHTML = currentRiddle.hint;
         hintBox.classList.toggle('aside-enter');

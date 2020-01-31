@@ -89,16 +89,18 @@ const GameStart = () => {
             <li>Total Score</li>
           </ul>
           {ladder.map((rank,idx) => {
-            return (
-              <ul key={idx}>
-                <li>{rank.player}</li>
-                <li>{rank.difficulty}</li>
-                <li>{rank.time}</li>
-                <li>{rank.chance}</li>
-                <li>{rank.hint}</li>
-                <li>{rank.total}</li>
-              </ul>
-            )
+            if(idx < 10){
+              return (
+                <ul key={idx}>
+                  <li>{rank.player}</li>
+                  <li>{rank.difficulty}</li>
+                  <li>{rank.time}</li>
+                  <li>{rank.chance}</li>
+                  <li>{rank.hint}</li>
+                  <li>{rank.total}</li>
+                </ul>
+              )
+            }
           })}
         </div>
       </aside>

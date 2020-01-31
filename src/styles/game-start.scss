@@ -69,6 +69,11 @@
   border: 1vw solid $site-yellow-lgt;
   border-radius: 1vw;
   height: 100%;
+  overflow: scroll;
+}
+
+.leaderboard div::-webkit-scrollbar {
+  display: none;
 }
 
 

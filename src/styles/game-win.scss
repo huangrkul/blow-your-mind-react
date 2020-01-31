@@ -50,6 +50,33 @@
   border-left: 1px dotted $site-black;
 }
 
+
+@media (max-width: 1024px) {
+  .win-box {
+    width: 70vw; 
+    height: 42vw;
+  }
+  .stat-box {
+    width: 50vw;
+    padding: 1.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .win-box {
+    width: 80vw; 
+    height: 48vw;
+  }
+  .stat-box {
+    width: 70vw;
+  }
+  .stat-box > div {
+    padding: 3vw;
+  }
+}
+
+
+
 .reveal-score {
   animation: reveal-score 400ms ease-out  forwards ;
 }
@@ -63,3 +90,4 @@
     opacity: 1;
   }
 }
+

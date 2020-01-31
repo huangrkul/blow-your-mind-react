@@ -22,6 +22,10 @@ const App = () => {
         <h1>Blow Your Mind - Web Game</h1>
       </header>
       <PageToRender />
+      <footer>
+        <div>	&copy; <a href="http://willhuanganimator.com" target="_blank">willhuanganimator.com 2020</a></div>
+        <div>Check out original <a href="http://willhuanganimator.com/projects/blow-your-mind/" target="_blank">version & team</a></div>
+      </footer>
     </main>
   );
 }
