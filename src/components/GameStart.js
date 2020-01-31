@@ -64,7 +64,6 @@ const GameStart = () => {
           const newRow = new Rank(row);
           allRanks.push(newRow);
         })
-        console.log(allRanks);
         sortRank(allRanks);
       })
   },[])
