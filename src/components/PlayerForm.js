@@ -29,7 +29,7 @@ const PlayerForm = () => {
       <form onSubmit={handleSubmit}>
         <ul>
           <li><label htmlFor="name" className="title-font">PLAYER NAME:</label></li>
-          <li><input type="text" id="name" autoComplete="off" required maxLength="20" autoFocus="autofocus"
+          <li><input type="text" id="name" autoComplete="off" required maxLength="6" autoFocus="autofocus"
               value={player}
               onChange={handlePlayer}/>
           </li>

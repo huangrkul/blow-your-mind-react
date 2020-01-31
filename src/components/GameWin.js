@@ -44,7 +44,7 @@ const GameWin = () => {
 
     let postPath;
     if(stats.player === '') {
-      stats.player = 'Anonymous';
+      stats.player = '????';
     }
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       postPath = '/postRank';

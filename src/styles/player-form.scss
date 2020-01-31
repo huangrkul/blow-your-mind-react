@@ -32,6 +32,10 @@
   margin-bottom: 0;
 }
 
+.player-form ul input {
+  text-align: center;
+}
+
 .player-form ul li:last-child input {
   background-color: $site-red-drk;
   border: 10px solid $site-red-drk;

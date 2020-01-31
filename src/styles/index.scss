@@ -98,11 +98,17 @@ footer {
   body, button {
     font-size: 2vw;
   }
+  footer {
+    font-size: 1vw;
+  }
 }
 
 @media (max-width: 768px) {
   body, button {
     font-size: 3vw;
+  }
+  footer {
+    font-size: 1.5vw;
   }
 }
 

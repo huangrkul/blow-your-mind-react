@@ -79,7 +79,7 @@
 
 .leaderboard ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   text-align: center;
 }
 
@@ -101,9 +101,9 @@
     margin: 6vw auto;
   }
   .leaderboard {
-    width: 60vw;
+    width: 80vw;
     height: 48vw;
-    margin-left: -30vw;
+    margin-left: -40vw;
   }
 }
 
@@ -125,8 +125,11 @@
     width: 100%;
   }
   .leaderboard {
-    width: 80vw;
+    width: 90vw;
     height: 60vw;
-    margin-left: -40vw;
+    margin-left: -45vw;
+  }
+  .leaderboard ul li:nth-child(3), .leaderboard ul li:nth-child(4), .leaderboard ul li:nth-child(5) {
+    display: none;
   }
 }
