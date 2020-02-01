@@ -33,11 +33,7 @@ const GameStart = () => {
   }
 
   const handleRanking = () => {
-    if(globalState.state.rank === null) {
-
-    } else {
-      document.querySelector('.leaderboard').classList.toggle('lead-enter');
-    }
+    document.querySelector('.leaderboard').classList.toggle('lead-enter');
   }
 
   const sortRank = (allRanks) => {
@@ -89,7 +85,11 @@ const GameStart = () => {
             <li>Total Score</li>
           </ul>
           {ladder.map((rank,idx) => {
-            if(idx < 10){
+            if(ladder === null) {
+              return (
+                <div>Fetching leaderboard...</div>
+              )
+            } else if (idx < 10){
               return (
                 <ul key={idx}>
                   <li>{rank.player}</li>
