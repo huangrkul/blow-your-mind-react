@@ -18,8 +18,7 @@ function Rank(data) {
 const GameStart = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
-  const ladder = globalState.state.ranks;
-  console.log(ladder.length);
+  let ladder = globalState.state.ranks;
 
   const handleGameStart = () => {
     if(globalState.state.isSubmitted){
@@ -43,6 +42,7 @@ const GameStart = () => {
       const bTotal = b.total;
       return bTotal - aTotal;
     })
+    document.querySelector('.leaderboard .loading').classList.add('dis-none');
     dispatch({type: 'showRanks', payload: allRanks});
   }
 
@@ -85,23 +85,18 @@ const GameStart = () => {
             <li>Hints Left</li>
             <li>Total Score</li>
           </ul>
+          <div className="loading">Fetching Data...</div>
           {ladder.map((rank,idx) => {
-            if(ladder.length === 0) {
-              return (
-                <div>Fetching leaderboard...</div>
-              )
-            } else if (idx < 10){
-              return (
-                <ul key={idx}>
-                  <li>{rank.player}</li>
-                  <li>{rank.difficulty}</li>
-                  <li>{rank.time}</li>
-                  <li>{rank.chance}</li>
-                  <li>{rank.hint}</li>
-                  <li>{rank.total}</li>
-                </ul>
-              )
-            }
+            return (
+              <ul key={idx}>
+                <li>{rank.player}</li>
+                <li>{rank.difficulty}</li>
+                <li>{rank.time}</li>
+                <li>{rank.chance}</li>
+                <li>{rank.hint}</li>
+                <li>{rank.total}</li>
+              </ul>
+            )
           })}
         </div>
       </aside>
