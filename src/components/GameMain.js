@@ -290,7 +290,7 @@ const GameMain = () => {
             <form onSubmit={handleCodeSubmit}>
               <h4>Disengage Code</h4>
               <input id="inputCode" maxLength="4" required autoComplete="off" />
-              <input type="submit" formAction="#top" value="Submit" />
+              <button type="submit" formAction="#top" value="Submit">Submit</button>
             </form>
           </section>
         </div>
@@ -301,7 +301,7 @@ const GameMain = () => {
           <p id="riddle">Click on the red buttons to start the game!</p>
           <form onSubmit={handleAnswer}>
             <input id="answer" maxLength="20" required autoComplete="off" placeholder="Answer..." />
-            <input type="submit" value="Submit" />
+            <button type="submit" value="Submit">Submit</button>
             <span></span>
           </form>
         </div>

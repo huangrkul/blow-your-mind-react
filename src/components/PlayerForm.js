@@ -40,7 +40,7 @@ const PlayerForm = () => {
               <option value="hard">Hard ({formatTime(globalState.state.timeHard)})</option>
             </select>
           </li>
-          <li><input type="submit" value="Submit" /></li>
+          <li><button type="submit" value="Submit">Submit</button></li>
         </ul>
       </form>
       <div className="dis-none">

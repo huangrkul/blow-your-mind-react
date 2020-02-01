@@ -36,7 +36,7 @@
   text-align: center;
 }
 
-.player-form ul li:last-child input {
+.player-form ul li:last-child button {
   background-color: $site-red-drk;
   border: 10px solid $site-red-drk;
   border-radius: 10px;
@@ -46,11 +46,11 @@
   cursor: pointer;
 }
 
-.player-form ul li:last-child input:hover {
+.player-form ul li:last-child button:hover {
   color: $site-red;
 }
 
-.player-form form label, .player-form form select, .player-form input {
+.player-form form label, .player-form form select, .player-form input, .player-form button {
   font-size: 1vw;
   vertical-align: middle;
   border-radius: 5px;
@@ -76,10 +76,10 @@
     flex: 0 0 50%;
   }
   
-  .player-form form label, .player-form form select, .player-form input {
+  .player-form form label, .player-form form select, .player-form input, .player-form button {
     font-size: 1.6vw;
   }
-  .player-form ul li:last-child input {
+  .player-form ul li:last-child button {
     font-size: 2vw;
   }
 }
@@ -94,10 +94,10 @@
     margin-bottom: 1vw;
   }
   
-  .player-form form label, .player-form form select, .player-form input {
+  .player-form form label, .player-form form select, .player-form input, .player-form button {
     font-size: 2.2vw;
   }
-  .player-form ul li:last-child input {
+  .player-form ul li:last-child button {
     font-size: 3vw;
   }
 }

@@ -19,6 +19,7 @@ const GameStart = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const ladder = globalState.state.ranks;
+  console.log(ladder.length);
 
   const handleGameStart = () => {
     if(globalState.state.isSubmitted){
@@ -85,7 +86,7 @@ const GameStart = () => {
             <li>Total Score</li>
           </ul>
           {ladder.map((rank,idx) => {
-            if(ladder === null) {
+            if(ladder.length === 0) {
               return (
                 <div>Fetching leaderboard...</div>
               )
